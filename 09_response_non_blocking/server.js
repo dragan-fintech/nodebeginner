@@ -1,5 +1,5 @@
 /*
-response v1: not good because request handlers cannot do non-blocking operations
+response v2: good because request handlers can non-blocking operations
 */
 
 var http = require("http");
