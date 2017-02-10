@@ -1,5 +1,5 @@
 /*
-parse request
+response v1: not good because request handlers cannot do non-blocking operations
 */
 
 var http = require("http");
@@ -10,10 +10,10 @@ function start(route, handle) {
         var pathname = url.parse(request.url).pathname;
         console.log("Request for " + pathname + " received.");
         
-        route(handle, pathname);
+        var content = route(handle, pathname);
         
         response.writeHead(200, {"Content-Type": "text/plain"}); 
-        response.write("Hello World by Dragan Nikolic!");
+        response.write(content);
         response.end();
     }
 
