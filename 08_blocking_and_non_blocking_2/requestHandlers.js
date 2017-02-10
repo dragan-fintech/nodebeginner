@@ -1,24 +1,18 @@
 // request_handlers.js
+var childProcess = require("child_process")
 
 function start() {
     console.log("Request handler 'start' was called.");
+    var content = "empty"
 
-    function sleep(milliSeconds) {
-        var startTime = new Date().getTime();
-        var i = 1000;
-        var currentTime = startTime;
-        while (currentTime < startTime + milliSeconds) {
-            if (currentTime > startTime + i) {
-                console.log(i/1000);
-                i += 1000;
-            }
-
-            currentTime = new Date().getTime();
-        }
-    }
-
-    sleep(10000);
-    return "Hello Start";
+    //exec("ls -lah", function(error, stdout, stderr) {
+    //    content = stdout;
+    //});
+    var result = childProcess.execSync("ls -lah");
+    content = result.toString();
+    console.log(content);
+    
+    return content;
 }
 
 function upload() {
