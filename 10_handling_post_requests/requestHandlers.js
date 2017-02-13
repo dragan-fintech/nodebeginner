@@ -1,8 +1,8 @@
 // request_handlers.js
 var childProcess = require("child_process")
 
-function start(response) {
-    console.log("Request handler 'start' was called.");
+function start(response, postData) {
+    console.log("Request handler 'start' was called. (postData="+postData+")");
 
     var body = '<html>'+
         '<head>'+
@@ -24,10 +24,10 @@ function start(response) {
     response.end();
 }
 
-function upload(response) {
+function upload(response, postData) {
     console.log("Request handler 'upload' was called.");
     response.writeHead(200, {"Content-Type": "text/plain"}); 
-    response.write("Hello Upload");
+    response.write("You've sent: " + postData);
     response.end();
 }
 
