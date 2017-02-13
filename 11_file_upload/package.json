@@ -1,0 +1,15 @@
+{
+  "name": "file_upload",
+  "version": "1.0.0",
+  "revision": "indev",
+  "description": "Node Beginner Upload File Demo",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dragan-fintech/nodebeginner.git"
+  },
+  "author": "Dragan Nikolic <dragan@fintechdev.net>",
+  "dependencies": {
+    "formidable": "^1.1.1"
+  }
+}
